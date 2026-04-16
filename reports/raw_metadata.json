@@ -1,0 +1,19 @@
+{
+  "source_path": "C:\\Users\\User\\Downloads\\Online_retail_csv\\Online_Retail.csv",
+  "raw_copy_path": "data\\raw\\Online_Retail.csv",
+  "dataset_checksum": "c35975c40d0e1e105090fbb11188a409393055f873841bd012915475fc84e69f",
+  "rows": 541909,
+  "columns": [
+    "InvoiceNo",
+    "StockCode",
+    "Description",
+    "Quantity",
+    "InvoiceDate",
+    "UnitPrice",
+    "CustomerID",
+    "Country"
+  ],
+  "required_columns_missing": [],
+  "invoice_date_min": "2010-12-01T08:26:00",
+  "invoice_date_max": "2011-12-09T12:50:00"
+}

@@ -1,0 +1,124 @@
+# Evaluation Report
+
+## reproducibility
+
+```json
+{}
+```
+
+## efficiency
+
+```json
+{
+  "total_runtime_seconds": 9.462999,
+  "stage_runtime_seconds": {
+    "ingestion": 1.138051,
+    "eda": 0.58165,
+    "validation": 0.069085,
+    "cleaning": 1.301438,
+    "features": 0.136709,
+    "segmentation": 0.079618,
+    "benchmark": 4.731882,
+    "manual_baseline": 1.42432
+  },
+  "rows_processed": 541909,
+  "rows_per_second": 57266.095029704644
+}
+```
+
+## traceability
+
+```json
+{
+  "run_id": "8fa5523d-a81b-419a-b56e-bab20f12a3ab",
+  "dataset_checksum": "c35975c40d0e1e105090fbb11188a409393055f873841bd012915475fc84e69f",
+  "config_version": "configs/rfm.yaml",
+  "rules_version": "rfm_rules_v1",
+  "thresholds_version": "thresholds_v1",
+  "artifact_manifest": [
+    {
+      "path": "reports\\eda_report.json",
+      "sha256": "0ad2e38817ce8aab752d70b05213cd43333ab703d2a9edb2deace2057272f4ee",
+      "size_bytes": 1246
+    },
+    {
+      "path": "reports\\validation_report.json",
+      "sha256": "ea5f428efe5ed8abb94828c0bb940f4f7c49a52dadaf43d9c6b99d397523ae93",
+      "size_bytes": 206
+    },
+    {
+      "path": "data\\processed\\online_retail_clean.parquet",
+      "sha256": "20a87837abc09c028237de8eeedb9b98ddd4942a0f6a927a91bb389ff177ae5e",
+      "size_bytes": 2575020
+    },
+    {
+      "path": "data\\processed\\customer_rfm.parquet",
+      "sha256": "bf3be5203ef4560b1c4c3dc801c83057431823d2e747b2b733e1f758fe4c2243",
+      "size_bytes": 69815
+    },
+    {
+      "path": "data\\processed\\customer_segments.parquet",
+      "sha256": "24cb175ce71d4427ee02af58586e7b0f27929d539f190144b3b93022955a7ad6",
+      "size_bytes": 85328
+    },
+    {
+      "path": "reports\\benchmark_kmeans.json",
+      "sha256": "b77667fb62edc714758f1a9b54a6b9508ace6fe7801fb53819145a854fd50126",
+      "size_bytes": 525
+    },
+    {
+      "path": "reports\\manual_comparison.json",
+      "sha256": "4035cf2ff493bbb775d8f30ea930f580635e54ba7d04eb9236e8aee3e9a379dc",
+      "size_bytes": 344
+    },
+    {
+      "path": "reports\\efficiency_report.json",
+      "sha256": "b7cd60cbe7a564d2054ce2be9a2ce524abf69c98528fc2865e95841dea8dfac5",
+      "size_bytes": 371
+    }
+  ]
+}
+```
+
+## manual_comparison
+
+```json
+{
+  "baseline_name": "excel_style_manual_baseline",
+  "manual_steps": 6,
+  "pipeline_steps": 8,
+  "manual_runtime_seconds": 1.411186,
+  "compared_customers": 4338,
+  "segment_match_rate": 1.0,
+  "traceability": "limited_in_spreadsheets_high_in_pipeline",
+  "reproducibility": "manual_process_requires_repetition_pipeline_is_scripted"
+}
+```
+
+## benchmark
+
+```json
+{
+  "status": "completed",
+  "production_model": "RFM rule-based segments",
+  "benchmark_only": true,
+  "kmeans_results": {
+    "3": {
+      "silhouette": 0.33105635538542905,
+      "inertia": 2257.257991208605
+    },
+    "4": {
+      "silhouette": 0.3339933081320258,
+      "inertia": 1832.674427379427
+    },
+    "5": {
+      "silhouette": 0.31277715046030974,
+      "inertia": 1533.370834163631
+    },
+    "6": {
+      "silhouette": 0.3097965907880995,
+      "inertia": 1328.6875735873396
+    }
+  }
+}
+```

@@ -1,0 +1,54 @@
+{
+  "dataset_overview": {
+    "rows": 541909,
+    "columns": 8,
+    "column_names": [
+      "InvoiceNo",
+      "StockCode",
+      "Description",
+      "Quantity",
+      "InvoiceDate",
+      "UnitPrice",
+      "CustomerID",
+      "Country"
+    ],
+    "date_min": "2010-12-01T08:26:00",
+    "date_max": "2011-12-09T12:50:00",
+    "unique_customers": 4372,
+    "unique_invoices": 25900,
+    "unique_products": 4070,
+    "unique_countries": 38
+  },
+  "data_quality": {
+    "missing_by_column": {
+      "InvoiceNo": 0,
+      "StockCode": 0,
+      "Description": 1454,
+      "Quantity": 0,
+      "InvoiceDate": 0,
+      "UnitPrice": 0,
+      "CustomerID": 135080,
+      "Country": 0
+    },
+    "duplicate_rows": 5268,
+    "cancelled_invoice_rows": 9288,
+    "quantity_non_positive": 10624,
+    "unit_price_non_positive": 2517
+  },
+  "business_summary": {
+    "top_countries": {
+      "United Kingdom": 495478,
+      "Germany": 9495,
+      "France": 8557,
+      "EIRE": 8196,
+      "Spain": 2533,
+      "Netherlands": 2371,
+      "Belgium": 2069,
+      "Switzerland": 2002,
+      "Portugal": 1519,
+      "Australia": 1259
+    },
+    "quantity_sum": 5176450.0,
+    "gross_sales_sum": 9747747.934
+  }
+}

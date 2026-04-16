@@ -1,0 +1,35 @@
+paths:
+  source_csv: "C:/Users/User/Downloads/Online_retail_csv/Online_Retail.csv"
+  raw_dir: "data/raw"
+  interim_dir: "data/interim"
+  processed_dir: "data/processed"
+  reports_dir: "reports"
+
+pipeline:
+  snapshot_strategy: "max_invoice_date_plus_one_day"
+  snapshot_date: null
+  rfm_bins: 5
+  rules_version: "rfm_rules_v1"
+  thresholds_version: "thresholds_v1"
+
+cleaning:
+  drop_missing_customer_id: true
+  exclude_cancelled_invoices: true
+  require_positive_quantity: true
+  require_positive_unit_price: true
+  drop_exact_duplicates: true
+
+evaluation:
+  n_reproducibility_runs: 3
+  manual_baseline_name: "excel_style_manual_baseline"
+
+segments:
+  champions: "Champions"
+  loyal: "Loyal Customers"
+  potential: "Potential Loyalists"
+  new: "New Customers"
+  need_attention: "Need Attention"
+  at_risk: "At Risk"
+  cannot_lose: "Cannot Lose Them"
+  hibernating: "Hibernating"
+  others: "Others"

@@ -1,0 +1,9 @@
+{
+  "snapshot_date": "2011-12-10T12:50:00",
+  "customers": 4338,
+  "rfm_path": "data\\processed\\customer_rfm.parquet",
+  "recency_min": 1,
+  "recency_max": 374,
+  "frequency_max": 209,
+  "monetary_sum": 8887208.894
+}

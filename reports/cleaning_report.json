@@ -1,0 +1,13 @@
+{
+  "initial_rows": 541909,
+  "clean_rows": 392692,
+  "excluded_counts_raw": {
+    "missing_customer_id": 135080,
+    "cancelled_invoice": 9288,
+    "quantity_non_positive": 10624,
+    "unit_price_non_positive": 2517,
+    "exact_duplicate": 5268
+  },
+  "duplicate_removed_after_filters": 5192,
+  "clean_dataset_path": "data\\processed\\online_retail_clean.parquet"
+}

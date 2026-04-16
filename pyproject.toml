@@ -1,0 +1,25 @@
+[project]
+name = "rfm-online-retail"
+version = "0.1.0"
+description = "Reproducible RFM segmentation pipeline for the Online Retail dataset"
+requires-python = ">=3.11"
+dependencies = [
+  "pandas>=2.0",
+  "pyarrow>=14.0",
+  "pydantic>=2.0",
+  "pyyaml>=6.0",
+  "pandera>=0.18",
+  "scikit-learn>=1.3",
+  "fastapi>=0.110",
+  "uvicorn>=0.27",
+  "streamlit>=1.32",
+  "plotly>=5.18",
+  "pytest>=8.0"
+]
+
+[project.scripts]
+rfm-pipeline = "rfm_pipeline.cli:main"
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

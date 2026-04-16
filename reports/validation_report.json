@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "missing_columns": [],
+  "type_checks": {
+    "InvoiceDate_parseable_ratio": 1.0,
+    "Quantity_numeric_ratio": 1.0,
+    "UnitPrice_numeric_ratio": 1.0
+  },
+  "rows": 541909
+}

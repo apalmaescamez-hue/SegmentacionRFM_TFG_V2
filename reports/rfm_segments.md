@@ -1,0 +1,59 @@
+# RFM Segments
+
+## segments_path
+
+```json
+"data\\processed\\customer_segments.parquet"
+```
+
+## customers
+
+```json
+4338
+```
+
+## segment_distribution
+
+```json
+{
+  "Hibernating": 1074,
+  "Champions": 942,
+  "Need Attention": 539,
+  "Loyal Customers": 533,
+  "At Risk": 413,
+  "New Customers": 310,
+  "Potential Loyalists": 304,
+  "Cannot Lose Them": 175,
+  "Others": 48
+}
+```
+
+## thresholds
+
+```json
+{
+  "rules_version": "rfm_rules_v1",
+  "thresholds_version": "thresholds_v1",
+  "bins": 5,
+  "quantiles": {
+    "recency": {
+      "0.2": 13.400000000000091,
+      "0.4": 33.0,
+      "0.6": 72.0,
+      "0.8": 179.0
+    },
+    "frequency": {
+      "0.2": 1.0,
+      "0.4": 2.0,
+      "0.6": 3.0,
+      "0.8": 6.0
+    },
+    "monetary": {
+      "0.2": 249.34400000000008,
+      "0.4": 487.4120000000001,
+      "0.6": 933.348,
+      "0.8": 2055.0500000000006
+    }
+  }
+}
+```
