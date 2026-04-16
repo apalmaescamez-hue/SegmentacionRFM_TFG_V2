@@ -8,7 +8,6 @@ venv/
 .env
 .streamlit/secrets.toml
 .atl/
-data/raw/*.csv
 data/processed/reproducibility_runs/
 data/processed/manual_baseline/
 reports/reproducibility_runs/
