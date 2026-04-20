@@ -44,6 +44,25 @@ def load_segments() -> pd.DataFrame:
     return pd.DataFrame()
 
 
+@st.cache_data(show_spinner=False)
+def load_clean_transactions() -> pd.DataFrame:
+    parquet = PROCESSED_DIR / "online_retail_clean.parquet"
+    csv = PROCESSED_DIR / "online_retail_clean.csv"
+    if parquet.exists():
+        df = pd.read_parquet(parquet)
+    elif csv.exists():
+        df = pd.read_csv(csv)
+    else:
+        return pd.DataFrame()
+    if "InvoiceDate" in df.columns:
+        df["InvoiceDate"] = pd.to_datetime(df["InvoiceDate"], errors="coerce")
+    if {"Quantity", "UnitPrice"}.issubset(df.columns) and "line_total" not in df.columns:
+        df["line_total"] = pd.to_numeric(df["Quantity"], errors="coerce") * pd.to_numeric(
+            df["UnitPrice"], errors="coerce"
+        )
+    return df
+
+
 def metric_card(label: str, value: Any, help_text: str | None = None) -> None:
     st.metric(label, value if value is not None else "—", help=help_text)
 
