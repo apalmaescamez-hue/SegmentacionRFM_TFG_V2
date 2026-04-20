@@ -53,6 +53,35 @@ $env:PYTHONPATH='src;dashboard'
 C:\Users\User\anaconda3\python.exe -m streamlit run dashboard/app.py
 ```
 
+## Reproducir el pipeline y las pruebas
+
+El pipeline ya usa la copia versionada del dataset en:
+
+```text
+data/raw/Online_Retail.csv
+```
+
+Para regenerar artefactos:
+
+```powershell
+$env:PYTHONPATH='src'
+C:\Users\User\anaconda3\python.exe -m rfm_pipeline.cli run
+```
+
+Para validar reproducibilidad empírica con 3 ejecuciones:
+
+```powershell
+$env:PYTHONPATH='src'
+C:\Users\User\anaconda3\python.exe -m rfm_pipeline.cli reproducibility --runs 3
+```
+
+Para ejecutar tests unitarios:
+
+```powershell
+$env:PYTHONPATH='src'
+C:\Users\User\anaconda3\python.exe -m pytest -q -p no:cacheprovider
+```
+
 ## Nota
 
 El dashboard no ejecuta el pipeline en cada carga. Lee los artefactos ya generados para mantener reproducibilidad y evitar tiempos de ejecución innecesarios en Streamlit Cloud.

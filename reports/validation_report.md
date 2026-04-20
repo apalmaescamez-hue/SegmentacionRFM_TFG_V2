@@ -6,6 +6,27 @@
 true
 ```
 
+## validation_engine
+
+```json
+"manual_fallback"
+```
+
+## pandera_available
+
+```json
+false
+```
+
+## pandera_result
+
+```json
+{
+  "passed": false,
+  "reason": "pandera_unavailable: No module named 'pandera'"
+}
+```
+
 ## missing_columns
 
 ```json

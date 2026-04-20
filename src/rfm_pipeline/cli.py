@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import argparse
+import json
 from pathlib import Path
 
 import pandas as pd
@@ -18,6 +19,13 @@ from .reproducibility import run_repeated_pipeline
 from .segmentation import segment_customers
 from .traceability import write_traceability_manifest
 from .validation import validate_online_retail
+
+
+def _read_report(path: str | Path) -> dict:
+    report_path = Path(path)
+    if not report_path.exists():
+        return {}
+    return json.loads(report_path.read_text(encoding="utf-8"))
 
 
 def _dirs(config: RFMConfig, run_subdir: str | None) -> tuple[Path, Path]:
@@ -65,6 +73,7 @@ def run_pipeline(config_path: str = "configs/rfm.yaml", run_subdir: str | None =
     traceability_report = write_traceability_manifest(config, artifact_paths, report_dir)
     evaluation_report = aggregate_evaluation(
         report_dir,
+        reproducibility=_read_report(report_dir / "reproducibility_report.json"),
         efficiency=efficiency_report,
         traceability=traceability_report,
         manual_comparison=manual_report,
@@ -98,6 +107,14 @@ def main() -> None:
     if args.command == "reproducibility":
         n_runs = args.runs or config.evaluation.n_reproducibility_runs
         report = run_repeated_pipeline(lambda subdir: run_pipeline(args.config, subdir), n_runs, config.paths.reports_dir)
+        aggregate_evaluation(
+            config.paths.reports_dir,
+            reproducibility=report,
+            efficiency=_read_report(config.paths.reports_dir / "efficiency_report.json"),
+            traceability=_read_report(config.paths.reports_dir / "traceability_manifest.json"),
+            manual_comparison=_read_report(config.paths.reports_dir / "manual_comparison.json"),
+            benchmark=_read_report(config.paths.reports_dir / "benchmark_kmeans.json"),
+        )
         print(report)
 
 

@@ -71,5 +71,6 @@ st.markdown(
     - **Ethics RGPD**: privacidad, minimización y limitaciones ético-legales.
     - **Data Model**: esquema conceptual de datos y trazabilidad.
     - **TFG Alignment**: relación explícita entre objetivos académicos y app.
+    - **Limitations Future**: limitaciones del artefacto y líneas futuras.
     """
 )

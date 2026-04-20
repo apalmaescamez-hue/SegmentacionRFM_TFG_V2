@@ -3,26 +3,36 @@
 ## reproducibility
 
 ```json
-{}
+{
+  "runs": 3,
+  "output_hash_match_rate": 1.0,
+  "segment_stability": 1.0,
+  "rfm_numeric_delta_max": 0.0,
+  "output_hashes": [
+    "326e934de2b0fb544c0494d9d2a0b2a6354f4127fdb0e767d7722b583c98a2d7",
+    "326e934de2b0fb544c0494d9d2a0b2a6354f4127fdb0e767d7722b583c98a2d7",
+    "326e934de2b0fb544c0494d9d2a0b2a6354f4127fdb0e767d7722b583c98a2d7"
+  ]
+}
 ```
 
 ## efficiency
 
 ```json
 {
-  "total_runtime_seconds": 9.462999,
+  "total_runtime_seconds": 12.305412,
   "stage_runtime_seconds": {
-    "ingestion": 1.138051,
-    "eda": 0.58165,
-    "validation": 0.069085,
-    "cleaning": 1.301438,
-    "features": 0.136709,
-    "segmentation": 0.079618,
-    "benchmark": 4.731882,
-    "manual_baseline": 1.42432
+    "ingestion": 1.190068,
+    "eda": 0.719894,
+    "validation": 0.08573,
+    "cleaning": 1.779188,
+    "features": 0.214494,
+    "segmentation": 0.129836,
+    "benchmark": 6.718303,
+    "manual_baseline": 1.467529
   },
   "rows_processed": 541909,
-  "rows_per_second": 57266.095029704644
+  "rows_per_second": 44038.26543962933
 }
 ```
 
@@ -30,7 +40,7 @@
 
 ```json
 {
-  "run_id": "8fa5523d-a81b-419a-b56e-bab20f12a3ab",
+  "run_id": "c9898a78-09a8-4e02-9e70-b6d64a6fade0",
   "dataset_checksum": "c35975c40d0e1e105090fbb11188a409393055f873841bd012915475fc84e69f",
   "config_version": "configs/rfm.yaml",
   "rules_version": "rfm_rules_v1",
@@ -43,8 +53,8 @@
     },
     {
       "path": "reports\\validation_report.json",
-      "sha256": "ea5f428efe5ed8abb94828c0bb940f4f7c49a52dadaf43d9c6b99d397523ae93",
-      "size_bytes": 206
+      "sha256": "0a273e62bf5e387aed2ea5e44868dc0867a2eb0852f618f0cce901e393b4137d",
+      "size_bytes": 395
     },
     {
       "path": "data\\processed\\online_retail_clean.parquet",
@@ -68,13 +78,13 @@
     },
     {
       "path": "reports\\manual_comparison.json",
-      "sha256": "4035cf2ff493bbb775d8f30ea930f580635e54ba7d04eb9236e8aee3e9a379dc",
-      "size_bytes": 344
+      "sha256": "05fc1355fbcc17fa42e140b4c92dd15e50e97a053e24fdcd64c9af94e354a927",
+      "size_bytes": 343
     },
     {
       "path": "reports\\efficiency_report.json",
-      "sha256": "b7cd60cbe7a564d2054ce2be9a2ce524abf69c98528fc2865e95841dea8dfac5",
-      "size_bytes": 371
+      "sha256": "312da27a50155ecc0e77290ae529455dbca96ab8e8f6f99b9baeda75e87f7e3b",
+      "size_bytes": 372
     }
   ]
 }
@@ -87,7 +97,7 @@
   "baseline_name": "excel_style_manual_baseline",
   "manual_steps": 6,
   "pipeline_steps": 8,
-  "manual_runtime_seconds": 1.411186,
+  "manual_runtime_seconds": 1.45433,
   "compared_customers": 4338,
   "segment_match_rate": 1.0,
   "traceability": "limited_in_spreadsheets_high_in_pipeline",

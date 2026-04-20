@@ -2,7 +2,7 @@
   "baseline_name": "excel_style_manual_baseline",
   "manual_steps": 6,
   "pipeline_steps": 8,
-  "manual_runtime_seconds": 1.411186,
+  "manual_runtime_seconds": 1.45433,
   "compared_customers": 4338,
   "segment_match_rate": 1.0,
   "traceability": "limited_in_spreadsheets_high_in_pipeline",

@@ -1,5 +1,11 @@
 {
   "passed": true,
+  "validation_engine": "manual_fallback",
+  "pandera_available": false,
+  "pandera_result": {
+    "passed": false,
+    "reason": "pandera_unavailable: No module named 'pandera'"
+  },
   "missing_columns": [],
   "type_checks": {
     "InvoiceDate_parseable_ratio": 1.0,

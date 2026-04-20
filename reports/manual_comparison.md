@@ -21,7 +21,7 @@
 ## manual_runtime_seconds
 
 ```json
-1.411186
+1.45433
 ```
 
 ## compared_customers
