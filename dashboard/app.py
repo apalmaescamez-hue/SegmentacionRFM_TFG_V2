@@ -67,5 +67,9 @@ st.markdown(
     - **Manual vs Pipeline**: comparación con enfoque tipo Excel.
     - **Agents**: rol práctico/conceptual y uso de LLM.
     - **Reports**: visor/descarga de reportes.
+    - **Methodology CRISP-DM**: conexión metodológica con el plan de trabajo.
+    - **Ethics RGPD**: privacidad, minimización y limitaciones ético-legales.
+    - **Data Model**: esquema conceptual de datos y trazabilidad.
+    - **TFG Alignment**: relación explícita entre objetivos académicos y app.
     """
 )
